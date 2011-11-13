@@ -4,7 +4,7 @@ Quoted-Printable Encoder/Decoder for Qt
 This project contains an encoder and a decoder for Quoted-Printable encoding described in [RCF 2045](http://tools.ietf.org/html/rfc2045#page-19).
 
 ##Examples
-
+The following example will show how to encode and decode an unicode text:
 ```c++
 #include <QApplication>
 #include "quotedprintable.h"
