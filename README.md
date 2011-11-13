@@ -5,6 +5,7 @@ This project contains an encoder and a decoder for Quoted-Printable encoding des
 
 ##Examples
 The following example will show how to encode and decode an unicode text:
+
 ```c++
 #include <QApplication>
 #include "quotedprintable.h"
