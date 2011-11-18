@@ -57,5 +57,5 @@ The program's output will be:
 
 ##License
 
-This project is released under GPL v.2.
+This project is released under LGPL, version 2.1.
 
