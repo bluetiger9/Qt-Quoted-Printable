@@ -28,7 +28,7 @@ QByteArray QuotedPrintable::encode(const QString &input)
     {
         byte = latin1[i];
 
-        if ((byte == 0x20) || ((byte >= 33) && (byte <= 126)))
+        if ((byte == ' ') || ((byte >= 33) && (byte <= 126)  && (byte != '=')))
         {
             output.append(byte);
         }
