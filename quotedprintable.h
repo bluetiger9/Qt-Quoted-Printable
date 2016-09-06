@@ -25,8 +25,8 @@ class QuotedPrintable : public QObject
     Q_OBJECT
 public:
 
-    static QString& encode(const QByteArray &input);
-    static QByteArray& decode(const QString &input);
+    static QByteArray encode(const QString &input);
+    static QString decode(const QByteArray &input);
 
 private:
     QuotedPrintable();
