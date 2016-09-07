@@ -7,32 +7,34 @@ This project contains an encoder and a decoder for Quoted-Printable encoding des
 The following example will show how to encode and decode an unicode text:
 
 ```c++
-#include <QApplication>
 #include "quotedprintable.h"
 
-#include <iostream>
+#include <QCoreApplication>
+#include <QDebug>
 
 int main(int argc, char **argv)
 {
-    QApplication(argc, argv);
+    QCoreApplication(argc, argv);
 
     QString text ("Some unicode text: \n" \
                   "Hungarian text: Jó reggelt kívánok!\n" \
                   "Chinese text: 您 好，世 界！\n" \
                   "Math operators :  ⋐ ⋑ ⋒ ⋓ ⋔ ⋕ ⋖⋗ ⋘ ⋙ ⋚ ⋛ ⋜ ⋝ ⋞ ⋟\n");
 
-    std::cout << "=== Original Text ===\n";
-    std::cout << text.toStdString();
+    qDebug() << "=== Original Text ===";
+    qDebug().noquote() << text;
 
-    QString encoded = QuotedPrintable::encode(text.toAscii());
+    QByteArray encoded = QuotedPrintable::encode(text.toUtf8());
 
-    std::cout << "\n=== Quoted-Printable Encoded Text ===\n";
-    std::cout << encoded.toStdString();
+    qDebug() << "";
+    qDebug() << "=== Quoted-Printable Encoded Text ===";
+    qDebug().noquote() << encoded;
 
     QString decoded = QuotedPrintable::decode(encoded);
 
-    std::cout << "\n\n=== Decoded Text ===\n";
-    std::cout << decoded.toStdString();
+    qDebug() << "";
+    qDebug() << "=== Decoded Text ===";
+    qDebug().noquote() << decoded;
 
     return 0;
 }
